@@ -1,0 +1,74 @@
+package cn.jinhx.geojson;
+
+/**
+ * @author y-z-f
+ * @since 2023/1/1
+ */
+public interface GeoJsonObjectVisitor<T> {
+
+    T visit(GeometryCollection geoJsonObject);
+
+    T visit(FeatureCollection geoJsonObject);
+
+    T visit(Point geoJsonObject);
+
+    T visit(Feature geoJsonObject);
+
+    T visit(MultiLineString geoJsonObject);
+
+    T visit(Polygon geoJsonObject);
+
+    T visit(MultiPolygon geoJsonObject);
+
+    T visit(MultiPoint geoJsonObject);
+
+    T visit(LineString geoJsonObject);
+
+    class Adapter<T> implements GeoJsonObjectVisitor<T> {
+
+        @Override
+        public T visit(GeometryCollection geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(FeatureCollection geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(Point geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(Feature geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(MultiLineString geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(Polygon geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(MultiPolygon geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(MultiPoint geoJsonObject) {
+            return null;
+        }
+
+        @Override
+        public T visit(LineString geoJsonObject) {
+            return null;
+        }
+    }
+}

@@ -172,3 +172,53 @@ WITHIN fleet TILE 16 10 5
 ```
 WITHIN fleet SECTOR 33.5123 -112.2693 1000 0 90
 ```
+
+### GeoJson实体
+由于实际使用过程中需要大量依赖GeoJson实体对象，为此当前该库内置了对应的GeoJson实体对象便于
+进行数据的序列化与反序列化，当然也可以用于其他需要这类实体对象的场景下而不仅仅作为tile38的SDK
+使用，具体的使用方式介绍如下。  
+
+* 在你已知所需要反序列化的类型情况下，可以采用以下方式进行反序列化。  
+```java
+FeatureCollection featureCollection = new ObjectMapper().readValue(inputStream, FeatureCollection.class);
+```
+
+* 如果对具体类型未知或期望使用更为通用的类型进行转换，可以采用以下方式进行反序列化。  
+```java
+GeoJsonObject object = new ObjectMapper().readValue(inputStream, GeoJsonObject.class);
+if (object instanceof Polygon) {
+	...
+} else if (object instanceof Feature) {
+	...
+}
+```
+* 序列化GeoJson对象  
+相较于反序列化，序列化很容易只要实例化所需的类型并进行填充即可，最终使用Jackson`ObjectMapper`
+进行转换即可。  
+
+```java
+FeatureCollection featureCollection = new FeatureCollection();
+featureCollection.add(new Feature());
+
+String json= new ObjectMapper().writeValueAsString(featureCollection);
+```
+
+## 地理围栏
+
+### 观察行为
+通过针对传统地理围栏的观察我们可以发现大多数地理围栏主要具备以下几种行为其中的一种，并且业务应用可根据
+这类触发的行为进行有效的逻辑处理。  
+* inside: 当对象处在指定的区域范围内时  
+* outside: 当对象处在指定的区域范围外时
+* enter: 当对象未处在指定的范围内时，对象进入区域内时触发
+* exit: 当对象处在指定的范围内，离开指定的区域时触发
+* cross: 当对象未处在指定的区域范围内，对象进入并离开区域时触发
+
+### 检索方式
+为了有效的使用各类条件关键词，为此需要针对核心的关键词进行介绍讲解，以便更好的了解并根据实际项目需要进行取舍
+从而提高针对项目的符合度，当前tile38主要提供了`NEARBY`、`INTERSECTS`与`WITHIN`关键词用于进行检索，针对
+各类关键词的检索方式介绍如下。  
+
+#### NEARBY
+该指令用于在指定集合中搜索最接近的点，其内部使用KNN算法代替标准的overlap+Haversine算法，将结果参照就近原则
+进行排序输出。

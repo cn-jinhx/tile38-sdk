@@ -4,15 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80c048e3-b00d-4d62-a5b2-c2b119c91367" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/KeysCommands.java" afterDir="false" />
+    <list default="true" id="80c048e3-b00d-4d62-a5b2-c2b119c91367" name="变更" comment="优化动态化参数能力以及GeoJson对象">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ChannelsCommands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/ElementType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/FieldArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/GetArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetBoundsArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetHashArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetObjectArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetPointArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Feature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/FeatureCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeoJsonObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeoJsonObjectVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Geometry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeometryCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/LineString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/LngLatAlt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiLineString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPolygon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Polygon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/jackson/LngLatAltDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/jackson/LngLatAltSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/FeatureTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/GeoJsonObjectVisitorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/GeometryCollectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/LineStringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/LngLatAltTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/MultiLineStringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/MultiPointTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/MultiPoligonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/PointTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/PolygonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/mock/MockData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/KeysCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/KeysCommands.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +55,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -40,17 +75,42 @@
     </option>
   </component>
   <component name="ProjectId" id="2JXeCwDbcuh58f540IYjoAVrLGf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="FeatureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tile38" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.jinhx.geojson.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.jinhx.geojson" />
+      <option name="MAIN_CLASS_NAME" value="cn.jinhx.geojson.FeatureTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FeatureTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -60,6 +120,30 @@
       <option name="presentableId" value="Default" />
       <updated>1672228731936</updated>
     </task>
+    <task id="LOCAL-00001" summary="change name">
+      <created>1672332017122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672332017122</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change name" />
+    <MESSAGE value="优化动态化参数能力以及GeoJson对象" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化动态化参数能力以及GeoJson对象" />
   </component>
 </project>
