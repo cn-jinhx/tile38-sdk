@@ -1,6 +1,7 @@
 package cn.jinhx.geojson;
 
 /**
+ * 线条对象
  * @author y-z-f
  * @since 2023/1/1
  */

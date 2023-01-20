@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
+ * 异构组合，多个形状进行组合。
  * @author y-z-f
  * @since 2023/1/1
  */

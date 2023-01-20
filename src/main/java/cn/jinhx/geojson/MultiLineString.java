@@ -3,6 +3,7 @@ package cn.jinhx.geojson;
 import java.util.List;
 
 /**
+ * 多个线条组合
  * @author y-z-f
  * @since 2023/1/1
  */

@@ -1,6 +1,7 @@
 package cn.jinhx.geojson;
 
 /**
+ * 多坐标点对象
  * @author y-z-f
  * @since 2023/1/1
  */

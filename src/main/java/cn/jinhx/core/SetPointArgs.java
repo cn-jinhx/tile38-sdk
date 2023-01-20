@@ -1,5 +1,6 @@
 package cn.jinhx.core;
 
+import cn.jinhx.core.model.ElementType;
 import io.lettuce.core.CompositeArgument;
 import io.lettuce.core.internal.LettuceAssert;
 import io.lettuce.core.protocol.CommandArgs;

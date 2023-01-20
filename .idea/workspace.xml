@@ -5,47 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80c048e3-b00d-4d62-a5b2-c2b119c91367" name="变更" comment="优化动态化参数能力以及GeoJson对象">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ChannelsCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/ElementType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/FieldArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/GetArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetBoundsArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetHashArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetObjectArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetPointArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Feature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/FeatureCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeoJsonObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeoJsonObjectVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Geometry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeometryCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/LineString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/LngLatAlt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiLineString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPolygon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Polygon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/jackson/LngLatAltDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/jackson/LngLatAltSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/FeatureTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/GeoJsonObjectVisitorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/GeometryCollectionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/LineStringTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/LngLatAltTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/MultiLineStringTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/MultiPointTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/MultiPoligonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/PointTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/PolygonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/geojson/mock/MockData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/IntersectsArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/IntersectsChanArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/NearbyArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/NearbyChanArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/OutputFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SearchArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/WithinArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/WithinChanArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/BoundsParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/CircleParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/DetectType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/GeoHashParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/GetParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/QuadKeyParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/RoamParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/SectorParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/TileParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/jinhx/core/IntersectsArgsUnitTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/KeysCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/KeysCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ChannelsCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ChannelsCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/ElementType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/ElementType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetBoundsArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetBoundsArgs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetHashArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetHashArgs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetObjectArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetObjectArgs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetPointArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SetPointArgs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeometryCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/GeometryCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/LineString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/LineString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiLineString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiLineString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPolygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/MultiPolygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/geojson/Polygon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +56,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/README.md" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -82,13 +78,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="FeatureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tile38" />
@@ -127,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672332017122</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="优化动态化参数能力以及GeoJson对象">
+      <created>1673516621350</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673516621350</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

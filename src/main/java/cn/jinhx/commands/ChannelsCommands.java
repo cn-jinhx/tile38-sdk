@@ -1,5 +1,8 @@
 package cn.jinhx.commands;
 
+import cn.jinhx.core.IntersectsChanArgs;
+import cn.jinhx.core.NearbyChanArgs;
+import cn.jinhx.core.WithinChanArgs;
 import io.lettuce.core.dynamic.Commands;
 import io.lettuce.core.dynamic.annotation.Command;
 import io.lettuce.core.dynamic.annotation.Param;
@@ -33,5 +36,21 @@ public interface ChannelsCommands extends Commands {
     @Command("PDELCHAN :pattern")
     String pDelChan(@Param("pattern")String pattern);
 
+    /**
+     * 设置基于指定边界相交的地理围栏
+     */
+    @Command("SETCHAN :name :args")
+    String setChan(@Param("name")String name, @Param("args")IntersectsChanArgs args);
 
+    /**
+     * 设置基于邻近指定点的地理围栏
+     */
+    @Command("SETCHAN :name :args")
+    String setChan(@Param("name")String name, @Param("args")NearbyChanArgs args);
+
+    /**
+     * 设置基于处于在指定框的地理围栏
+     */
+    @Command("SETCHAN :name :args")
+    String setChan(@Param("name")String name, @Param("args")WithinChanArgs args);
 }

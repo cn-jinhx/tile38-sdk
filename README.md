@@ -214,6 +214,11 @@ String json= new ObjectMapper().writeValueAsString(featureCollection);
 * exit: 当对象处在指定的范围内，离开指定的区域时触发
 * cross: 当对象未处在指定的区域范围内，对象进入并离开区域时触发
 
+在tile38中使用下述指令方式控制所需关注的行为。  
+```
+SETCHAN warehouse NEARBY fleet FENCE DETECT inside,outside POINT 33.462 -112.268 6000
+```
+
 ### 检索方式
 为了有效的使用各类条件关键词，为此需要针对核心的关键词进行介绍讲解，以便更好的了解并根据实际项目需要进行取舍
 从而提高针对项目的符合度，当前tile38主要提供了`NEARBY`、`INTERSECTS`与`WITHIN`关键词用于进行检索，针对
@@ -222,3 +227,59 @@ String json= new ObjectMapper().writeValueAsString(featureCollection);
 #### NEARBY
 该指令用于在指定集合中搜索最接近的点，其内部使用KNN算法代替标准的overlap+Haversine算法，将结果参照就近原则
 进行排序输出。
+
+### 条件筛选
+
+#### WHERE
+基本常用的条件筛选，可用来针对Field或者GeoJson对象中的`properties`属性进行筛选，如下述针对Field进行
+过滤筛选实现数据的过滤。  
+
+```
+SET fleet truck1  FIELD name Andy  POINT 33 -112
+SET fleet truck4  FIELD info '{"speed":60,"age":21,"name":"Tom"}'  POINT 33 -112
+
+INTERSECTS fleet WHERE 'name == "Andy"' BOUNDS 30 -120 40 -100
+INTERSECTS fleet WHERE 'info.speed > 45 && info.age < 21' BOUNDS 30 -120 40 -100
+```
+
+除了以上根据Field的过滤方式，也可以通过对GetJson对象中属性进行过滤，比如下述设置的GeoJson对象进行
+条件筛选。
+
+```
+SET fleet truck5 OBJECT '{"type":"Feature","geometry":{"type":"Point","coordinates":[-112,33]},"properties":{"speed":55}}'
+```
+
+设置完以上对象后，我们就可以针对其中的`properties`成员的属性进行条件筛选，从而实现我们所需要的功能。
+
+```
+INTERSECTS fleet WHERE 'properties.name == "Carol"' BOUNDS 30 -120 40 -100
+```
+
+#### WHEREIN
+该条件筛选方式类似我们SQL中的in关键字，用来约束条件字段的值在给定的列表中包含，其使用方式如下方式。
+
+```
+INTERSECTS fleet WHEREIN doors 2 2 5 WHEREIN wheels 3 14 18 22 BOUNDS 30 -120 40 -100
+```
+
+#### WHEREEVAL
+与where一致，均是用于进行条件过滤筛选，只是其主要采用Lua脚本进行条件的计算，从而判定条件是否满足当前
+对应的表达式，关于表达式的更多使用方式可以[参考此](https://tile38.com/commands/eval)，下述将主
+要列举其大致的使用方式。  
+
+```
+NEARBY fleet WHEREEVAL "return FIELDS.wheels > ARGV[1] or (FIELDS.length * FIELDS.width) 
+> ARGV[2]" 2 8 120 POINT 33.462 -112.268 6000
+```
+
+#### MATCH
+其与where的区别就是其匹配的非字段，而是数据本身的名称，比如在集合a中检索数据id为c开头的，就可以使用
+该方式进行检索，下面给出一个简单的示例以供参考。  
+
+```
+NEARBY fleet MATCH truck* POINT 33.462 -112.268 6000
+```
+
+#### CLIP
+CLIP 告诉服务器通过搜索的边界框区域裁剪相交的对象。它只能与这些区域格式一起使用：BOUNDS、TILE、
+QUADKEY、HASH。
