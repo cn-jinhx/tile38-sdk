@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 查询检索集合中的对象，主要用于值为字符串的对象，如POINT、OBJECT需要使用SCAN检索
+ * 用于检索集合中符合要求的对象
  * @author y-z-f
- * @since 2023/1/12
+ * @since 2023/1/20
  */
-public class SearchArgs implements CompositeArgument {
+public class ScanArgs implements CompositeArgument {
     /**
      * 游标位置
      */
@@ -55,11 +55,15 @@ public class SearchArgs implements CompositeArgument {
      * 数据输出类型
      */
     private OutputFormat outputFormat;
+    /**
+     * 针对Outputformat类型是HASHES附加参数
+     */
+    private long precision;
 
     /**
      * 游标位置
      */
-    public SearchArgs cursor(int val) {
+    public ScanArgs cursor(int val) {
         this.cursor = val;
         return this;
     }
@@ -67,7 +71,7 @@ public class SearchArgs implements CompositeArgument {
     /**
      * 设定输出的数据条数，默认输出100条
      */
-    public SearchArgs limit(int val) {
+    public ScanArgs limit(int val) {
         this.limit = val;
         return this;
     }
@@ -75,17 +79,17 @@ public class SearchArgs implements CompositeArgument {
     /**
      * 用于数据标识字段的过滤条件，非对应的值
      */
-    public SearchArgs addMatch(String val) {
+    public ScanArgs addMatch(String val) {
         this.match.add(val);
         return this;
     }
 
-    public SearchArgs asc() {
+    public ScanArgs asc() {
         this.asc = true;
         return this;
     }
 
-    public SearchArgs desc() {
+    public ScanArgs desc() {
         this.desc = true;
         return this;
     }
@@ -93,7 +97,7 @@ public class SearchArgs implements CompositeArgument {
     /**
      * 筛选过滤条件
      */
-    public SearchArgs addWhere(String val) {
+    public ScanArgs addWhere(String val) {
         this.where.add(val);
         return this;
     }
@@ -101,7 +105,7 @@ public class SearchArgs implements CompositeArgument {
     /**
      * 类似in的范围过滤条件
      */
-    public SearchArgs addWherein(String field, List<String> inval) {
+    public ScanArgs addWherein(String field, List<String> inval) {
         this.wherein.put(field, inval);
         return this;
     }
@@ -109,7 +113,7 @@ public class SearchArgs implements CompositeArgument {
     /**
      * 支持Lua脚本的过滤条件
      */
-    public SearchArgs addWhereEval(String val) {
+    public ScanArgs addWhereEval(String val) {
         this.whereEval.add(val);
         return this;
     }
@@ -117,7 +121,7 @@ public class SearchArgs implements CompositeArgument {
     /**
      * 结果不包含Field
      */
-    public SearchArgs noFields() {
+    public ScanArgs noFields() {
         this.noFields = true;
         return this;
     }
@@ -125,30 +129,35 @@ public class SearchArgs implements CompositeArgument {
     /**
      * 设置数据输出格式
      */
-    public SearchArgs outputFormat(OutputFormat val) {
-        if (val != OutputFormat.IDS || val != OutputFormat.COUNT) {
-            throw new IllegalArgumentException("the output format must be COUNT or IDS");
-        }
+    public ScanArgs outputFormat(OutputFormat val, long precision) {
         this.outputFormat = val;
+        this.precision = precision;
         return this;
     }
 
     /**
-     * {@link SearchArgs} 构建器
+     * 设置数据输出格式
+     */
+    public ScanArgs outputFormat(OutputFormat val) {
+        return this.outputFormat(val, 0);
+    }
+
+    /**
+     * {@link ScanArgs} 构建器
      */
     public static class Builder {
         private Builder() {}
 
-        public static SearchArgs where(String ...where) {
-            SearchArgs args = new SearchArgs();
+        public static ScanArgs where(String ...where) {
+            ScanArgs args = new ScanArgs();
             for (String item : where) {
                 args.addWhere(item);
             }
             return args;
         }
 
-        public static SearchArgs whereIn(String key, List<String> value) {
-            return new SearchArgs().addWherein(key, value);
+        public static ScanArgs whereIn(String key, List<String> value) {
+            return new ScanArgs().addWherein(key, value);
         }
     }
 
@@ -163,10 +172,10 @@ public class SearchArgs implements CompositeArgument {
         for (String item : match) {
             commandArgs.add("MATCH").add(item);
         }
-        if (this.asc) {
+        if (asc) {
             commandArgs.add("ASC");
         }
-        if (this.desc) {
+        if (desc) {
             commandArgs.add("DESC");
         }
         for (String item : where) {
@@ -185,5 +194,8 @@ public class SearchArgs implements CompositeArgument {
             commandArgs.add("NOFIELDS");
         }
         commandArgs.add(outputFormat.getType());
+        if (outputFormat == OutputFormat.HASHES) {
+            commandArgs.add(precision);
+        }
     }
 }

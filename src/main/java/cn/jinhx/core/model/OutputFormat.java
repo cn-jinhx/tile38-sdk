@@ -1,4 +1,4 @@
-package cn.jinhx.core;
+package cn.jinhx.core.model;
 
 /**
  * 数据输出类型

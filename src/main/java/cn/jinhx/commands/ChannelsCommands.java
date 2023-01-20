@@ -53,4 +53,16 @@ public interface ChannelsCommands extends Commands {
      */
     @Command("SETCHAN :name :args")
     String setChan(@Param("name")String name, @Param("args")WithinChanArgs args);
+
+    /**
+     * 订阅监听（尚未实现）
+     */
+    @Command("SUBSCRIBE :name")
+    String subscribe(@Param("name")String name);
+
+    /**
+     * 订阅监听（尚未实现）
+     */
+    @Command("PSUBSCRIBE :pattern")
+    String pSubscribe(@Param("pattern")String pattern);
 }
