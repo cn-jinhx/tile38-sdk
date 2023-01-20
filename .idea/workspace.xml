@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80c048e3-b00d-4d62-a5b2-c2b119c91367" name="变更" comment="完成SetChan指令的相关编写">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ConnectionCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ReplicationCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ScriptingCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/SearchCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/EvalArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/ScanArgs.java" afterDir="false" />
+    <list default="true" id="80c048e3-b00d-4d62-a5b2-c2b119c91367" name="变更" comment="完成Search指令的相关编写">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ServerCommands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ChannelsCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/commands/ChannelsCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/OutputFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/model/OutputFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SearchArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/jinhx/core/SearchArgs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -113,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674219120380</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="完成Search指令的相关编写">
+      <created>1674226690343</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674226690343</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +130,7 @@
     <MESSAGE value="change name" />
     <MESSAGE value="优化动态化参数能力以及GeoJson对象" />
     <MESSAGE value="完成SetChan指令的相关编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成SetChan指令的相关编写" />
+    <MESSAGE value="完成Search指令的相关编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成Search指令的相关编写" />
   </component>
 </project>
